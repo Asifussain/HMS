@@ -1,0 +1,139 @@
+.page {
+    font-family: 'poppins, sans-serif';
+    background-color: #f4f4f7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.imageSliderWrapper {
+    width: 100%;
+    height: 40vh;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+  
+.imageSliderContainer {
+    width: 100%;
+    height: 100%;
+}
+  
+.imageSlider {
+    height: 100%;
+    display: flex;
+    margin-left: 0%;
+}
+  
+.slide {
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.sliderImage {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+  
+.dashboardHeading {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+  
+.cardGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 60px;
+}
+  
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.308);
+    overflow: hidden;
+    width: calc(33.33% - 1.5rem);
+    min-width: 200px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+}
+  
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+  
+.cardLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    padding: 1.5rem 1rem;
+    flex-grow: 1;
+    justify-content: center;
+}
+  
+.cardImage {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+  
+.cardTitle {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 0;
+}
+  
+@media (max-width: 960px) {
+    .card {
+      width: calc(50% - 1.5rem);
+      height: 220px;
+    }
+}
+  
+@media (max-width: 640px) {
+    .card {
+      width: 100%;
+      height: auto;
+    }
+}
+  
+.loadingError {
+    padding: 2rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #777;
+}
+  
+.errorHeading {
+    color: red;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+  
+.errorText {
+    color: red;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}

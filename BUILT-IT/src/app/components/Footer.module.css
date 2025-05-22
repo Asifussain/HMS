@@ -1,200 +1,254 @@
 /* Footer.module.css */
 .footer {
-    background-color: #2d236e;
-    color: #ffffff;
-    padding: 3rem 2rem 1rem;
-    position: relative;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #002855, #001233);
+  color: #f8f9fa;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footerTop {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2rem 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.instituteBranding {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.instituteLogo {
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.instituteInfo h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.instituteInfo p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 3rem 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footerColumn h3 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.footerColumn h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background: #0074d9;
+  border-radius: 2px;
+}
+
+.footerColumn ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerColumn ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footerColumn ul li a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+.footerColumn ul li a:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.socialSection {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem 4rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.socialSection h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+  background-color: #0074d9;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 116, 217, 0.5);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+}
+
+.copyright p {
+  margin: 0;
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.bottomLinks a {
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.bottomLinks a:hover {
+  color: #ffffff;
+}
+
+.divider {
+  color: #555;
+}
+
+.scrollToTop {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+}
+
+.scrollToTop a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #0074d9;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.scrollToTop a:hover {
+  background-color: #0050a0;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.scrollIcon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .footerTop {
+    padding: 2rem;
+  }
+  
+  .instituteBranding {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   
   .footerContent {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    max-width: 1200px;
-    margin: 0 auto 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 2rem;
+    gap: 1.5rem;
   }
   
-  .footerColumn {
-    flex: 1;
-    min-width: 250px;
-    margin-bottom: 1.5rem;
-    padding-right: 1rem;
-  }
-  
-  .footerColumn h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-  }
-  
-  .footerColumn h3::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50px;
-    height: 2px;
-    background-color: #f0ad4e;
-  }
-  
-  .footerColumn ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .footerColumn ul li {
-    margin-bottom: 0.5rem;
-  }
-  
-  .footerColumn ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 0.9rem;
-    display: inline-block;
-  }
-  
-  .footerColumn ul li a:hover {
-    color: #f0ad4e;
-    text-decoration: underline;
-  }
-  
-  .instituteLogo {
-    margin-top: -7rem;
-    margin-left: 23rem;
-    display: flex;
-    justify-content: center;
+  .socialSection {
+    padding: 1.5rem 2rem;
   }
   
   .footerBottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .addressInfo {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  
-  .addressInfo p {
-    margin: 0.2rem 0;
-    font-size: 0.9rem;
-  }
-  
-  .visitorCounter {
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin: 1rem 0;
-    font-size: 0.9rem;
-  }
-  
-  .counterDigits {
-    display: flex;
-    margin-left: 0.5rem;
-  }
-  
-  .digit {
-    background-color: #f0ad4e;
-    color: #2d236e;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 2px;
-    border-radius: 2px;
-    font-weight: bold;
-    font-size: 0.8rem;
-  }
-  
-  .lastUpdate {
     text-align: center;
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
+    padding: 1.5rem 2rem;
   }
-  
-  .copyright {
-    text-align: center;
-    font-size: 0.8rem;
-    margin-top: 1rem;
-  }
-  
-  .bottomLinks {
-    display: flex;
-    justify-content: center;
-    margin-top: 0.5rem;
-  }
-  
-  .bottomLinks a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-size: 0.8rem;
-  }
-  
-  .bottomLinks a:hover {
-    color: #f0ad4e;
-    text-decoration: underline;
-  }
-  
-  .scrollToTop {
-    position: absolute;
-    right: 1.5rem;
-    bottom: 1.5rem;
-  }
-  
-  .scrollToTop a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background-color: #f0ad4e;
-    color: #2d236e;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-  
-  .scrollToTop a:hover {
-    background-color: #ffffff;
-  }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .footerContent {
-      flex-direction: column;
-    }
-    
-    .footerColumn {
-      min-width: 100%;
-      margin-bottom: 2rem;
-    }
-    
-    .instituteLogo {
-      margin: 1rem 0;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .footer {
-      padding: 2rem 1rem 1rem;
-    }
-    
-    .bottomLinks {
-      flex-direction: column;
-    }
-    
-    .bottomLinks a {
-      margin: 0.5rem 0;
-    }
-  }
+}

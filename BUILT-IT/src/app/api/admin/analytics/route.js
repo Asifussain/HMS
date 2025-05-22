@@ -4,31 +4,37 @@ import { NextResponse } from "next/server";
 
 export async function GET(request) {
   try {
-    // Occupancy: count students that have a room_number (occupied) vs. null (vacant)
-    const occupancyResult = await query(`
+    // Occupancy per hostel: group by hostel_block and count
+    const hostelResult = await query(`
       SELECT 
-        COUNT(*) FILTER (WHERE room_number IS NOT NULL) AS occupied,
-        COUNT(*) FILTER (WHERE room_number IS NULL) AS vacant
-      FROM students
+        hostel_block,
+        COUNT(*) AS occupied
+      FROM complaints
+      WHERE hostel_block IS NOT NULL
+      GROUP BY hostel_block
+      ORDER BY hostel_block ASC
     `);
-    const occupancy = occupancyResult.rows[0];
+    
+    const hostels = hostelResult.rows;
 
-    // Complaint resolution: count infrastructure complaints by status.
+    // Complaint resolution: count complaints by status
     const complaintResult = await query(`
       SELECT 
         COUNT(*) FILTER (WHERE status = 'pending') AS pending,
         COUNT(*) FILTER (WHERE status = 'in progress') AS "in progress",
         COUNT(*) FILTER (WHERE status = 'completed') AS completed
       FROM complaints
-      WHERE type = 'infrastructure'
     `);
+    
     const complaints = complaintResult.rows[0];
 
-    // Build the data object
+    // Build the data object with occupancy per hostel and complaint status
     const data = {
       occupancy: {
-        occupied: parseInt(occupancy.occupied, 10),
-        vacant: parseInt(occupancy.vacant, 10)
+        hostels: hostels.map((row) => ({
+          hostel_block: row.hostel_block,
+          occupied: parseInt(row.occupied, 10)
+        }))
       },
       complaints: {
         pending: parseInt(complaints.pending, 10),

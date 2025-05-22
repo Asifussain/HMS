@@ -1,6 +1,6 @@
-import { ClerkProvider } from "@clerk/nextjs";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import "./globals.css";
 
 export const metadata = {
   title: "Hostel Management System - IIT Indore",
@@ -9,7 +9,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
       <html lang="en">
         <body>
           <Navbar /> 
@@ -17,6 +16,6 @@ export default function RootLayout({ children }) {
           <Footer/>
         </body>
       </html>
-    </ClerkProvider>
   );
 }
+

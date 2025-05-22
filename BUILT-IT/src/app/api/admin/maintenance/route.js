@@ -3,9 +3,8 @@ import { NextResponse } from "next/server";
 
 export async function GET(request) {
   try {
-    // Fetch complaints where type = 'infrastructure'
     const result = await query(
-      "SELECT * FROM complaints WHERE type = 'infrastructure' ORDER BY created_at DESC"
+      "SELECT * FROM complaints ORDER BY created_at DESC"
     );
     return NextResponse.json(result.rows);
   } catch (error) {

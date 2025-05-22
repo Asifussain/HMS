@@ -1,0 +1,70 @@
+/* Container with a background image */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('/background.png') no-repeat center center/cover;
+    position: relative;
+  }
+  
+  /* Overlay with glassmorphism effect */
+  .overlay {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Glassmorphic Card */
+  .card {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1c2f58;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    color: #f0f0f0;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Google Sign-In Button inside the card */
+  .googleButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #fff;
+    border: 2px solid #1c2f58;
+    color: #1c2f58;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .googleButton:hover {
+    background-color: #1c2f58;
+    color: #fff;
+  }
+  
+  .googleIcon {
+    font-size: 1.5rem;
+  }
+  
