@@ -107,6 +107,8 @@
        setQrTimer(0); // Reset visual timer display when modal is open or no student
        if (intervalId) clearInterval(intervalId);
        if (countdownId) clearInterval(countdownId);
+       // ID
+   
      }
 
      // Cleanup function to clear intervals on unmount or dependency change
